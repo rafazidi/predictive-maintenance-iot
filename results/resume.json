@@ -1,0 +1,123 @@
+{
+  "cv": [
+    {
+      "Modèle": "Référence 1 variable",
+      "Précision": 0.3365,
+      "Rappel": 0.5513,
+      "F1": 0.4168,
+      "AUC": 0.7701,
+      "PR-AUC": 0.462,
+      "Précision_std": 0.0479,
+      "Rappel_std": 0.0887,
+      "F1_std": 0.0576,
+      "AUC_std": 0.0716,
+      "PR-AUC_std": 0.0905
+    },
+    {
+      "Modèle": "Régression logistique",
+      "Précision": 0.5383,
+      "Rappel": 0.9103,
+      "F1": 0.6728,
+      "AUC": 0.9692,
+      "PR-AUC": 0.7834,
+      "Précision_std": 0.0645,
+      "Rappel_std": 0.0755,
+      "F1_std": 0.0459,
+      "AUC_std": 0.0096,
+      "PR-AUC_std": 0.0416
+    },
+    {
+      "Modèle": "Random Forest",
+      "Précision": 0.6425,
+      "Rappel": 0.8153,
+      "F1": 0.7116,
+      "AUC": 0.9701,
+      "PR-AUC": 0.7773,
+      "Précision_std": 0.098,
+      "Rappel_std": 0.0846,
+      "F1_std": 0.0454,
+      "AUC_std": 0.0096,
+      "PR-AUC_std": 0.0404
+    },
+    {
+      "Modèle": "Gradient Boosting",
+      "Précision": 0.6664,
+      "Rappel": 0.7883,
+      "F1": 0.7158,
+      "AUC": 0.9678,
+      "PR-AUC": 0.7902,
+      "Précision_std": 0.0799,
+      "Rappel_std": 0.0764,
+      "F1_std": 0.0157,
+      "AUC_std": 0.0088,
+      "PR-AUC_std": 0.0281
+    }
+  ],
+  "test": [
+    {
+      "Modèle": "Référence 1 variable",
+      "Précision": 0.3812,
+      "Rappel": 0.4493,
+      "F1": 0.4125,
+      "AUC": 0.7435,
+      "PR-AUC": 0.4013
+    },
+    {
+      "Modèle": "Régression logistique",
+      "Précision": 0.5378,
+      "Rappel": 0.9587,
+      "F1": 0.689,
+      "AUC": 0.9736,
+      "PR-AUC": 0.755
+    },
+    {
+      "Modèle": "Random Forest",
+      "Précision": 0.5642,
+      "Rappel": 0.8667,
+      "F1": 0.6835,
+      "AUC": 0.9637,
+      "PR-AUC": 0.6778
+    },
+    {
+      "Modèle": "Gradient Boosting",
+      "Précision": 0.5957,
+      "Rappel": 0.8213,
+      "F1": 0.6906,
+      "AUC": 0.9642,
+      "PR-AUC": 0.7583
+    }
+  ],
+  "best_model": "Gradient Boosting",
+  "threshold": 0.59,
+  "costs": {
+    "Réactive (attendre la panne)": 100.0,
+    "Préventive (remplacer à 150 cycles)": 60.02,
+    "Prédictive (modèle ML)": 28.57
+  },
+  "rul": {
+    "MAE (tous)": 15.47,
+    "RMSE (tous)": 22.136,
+    "MAE (RUL<=50)": 15.998,
+    "Biais (RUL<=50)": 7.102,
+    "Score NASA moyen (RUL<=50)": 28.631
+  },
+  "rul_baseline": {
+    "MAE (tous)": 35.172,
+    "RMSE (tous)": 40.542,
+    "MAE (RUL<=50)": 69.198,
+    "Biais (RUL<=50)": 69.198,
+    "Score NASA moyen (RUL<=50)": 2524.123
+  },
+  "importance": {
+    "temperature": 0.2816,
+    "vibration": 0.21,
+    "pression": 0.3626,
+    "rpm": -0.0004,
+    "courant": 0.0086
+  },
+  "alerts": {
+    "useful": 29,
+    "total": 30,
+    "median_lead": 29.0
+  }
+}

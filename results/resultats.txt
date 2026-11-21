@@ -1,0 +1,40 @@
+[1] Dataset brut : (38181, 9), 150 machines, 3838 valeurs manquantes
+    Modes de panne : {'surchauffe': 52, 'fuite': 49, 'roulement': 49}
+[2] Après pré-traitement : 30 features, 9.8% d'échantillons « panne imminente » (RUL <= 24)
+[3] Dev : 120 machines | Test final : 30 machines
+
+[4] VALIDATION CROISÉE (5 plis, par machine) — moyenne ± écart-type
+    Référence 1 variable     P=0.336 R=0.551 F1=0.417±0.058 AUC=0.770 PR-AUC=0.462±0.090
+    Régression logistique    P=0.538 R=0.910 F1=0.673±0.046 AUC=0.969 PR-AUC=0.783±0.042
+    Random Forest            P=0.643 R=0.815 F1=0.712±0.045 AUC=0.970 PR-AUC=0.777±0.040
+    Gradient Boosting        P=0.666 R=0.788 F1=0.716±0.016 AUC=0.968 PR-AUC=0.790±0.028
+    Meilleur modèle (PR-AUC) : Gradient Boosting
+
+[5] Seuil d'alerte optimal (coût minimal, dev) : 0.59
+
+[6] TEST FINAL (machines jamais vues)
+    Référence 1 variable     P=0.381 R=0.449 F1=0.412 AUC=0.744 PR-AUC=0.401
+    Régression logistique    P=0.538 R=0.959 F1=0.689 AUC=0.974 PR-AUC=0.755
+    Random Forest            P=0.564 R=0.867 F1=0.683 AUC=0.964 PR-AUC=0.678
+    Gradient Boosting        P=0.596 R=0.821 F1=0.691 AUC=0.964 PR-AUC=0.758
+
+[7] COÛT MOYEN PAR MACHINE (test final)
+    Réactive (attendre la panne)                    100.0
+    Préventive (remplacer à 150 cycles)              60.0
+    Prédictive (modèle ML)                           28.6
+    Économie vs réactive : 71%
+    Alertes utiles : 29/30 | pannes ratées : 1 | délai d'alerte médian : 29 cycles
+
+[8] Importance par capteur (baisse de PR-AUC) :
+pression       0.3626
+temperature    0.2816
+vibration      0.2100
+courant        0.0086
+rpm           -0.0004
+
+[9] RÉGRESSION RUL (test final)
+    MAE (tous)                       Random Forest =    15.47 | référence (moyenne) =    35.17
+    RMSE (tous)                      Random Forest =    22.14 | référence (moyenne) =    40.54
+    MAE (RUL<=50)                    Random Forest =    16.00 | référence (moyenne) =    69.20
+    Biais (RUL<=50)                  Random Forest =     7.10 | référence (moyenne) =    69.20
+    Score NASA moyen (RUL<=50)       Random Forest =    28.63 | référence (moyenne) =  2524.12
